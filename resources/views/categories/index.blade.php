@@ -2,7 +2,7 @@
 @section('title', 'Category')
 @section('content')
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div class="max-w-7xl mx-auto py-6 sm:py-8">
         <div class="flex flex-col md:flex-row gap-6">
             <!-- Sidebar - Sticky on desktop, collapsible on mobile -->
             <div class="md:sticky md:top-6 md:h-[calc(100vh-3rem)] w-full md:w-auto">
@@ -87,13 +87,15 @@
 
             <!-- Main Content -->
             <div class="flex-1 bg-gray-200 p-4 rounded-lg">
-                <div class="max-w-7xl mx-auto px-4 py-6">
-                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Uploaded Images</h2>
-
+                <div class="max-w-7xl mx-auto">
+                    <div class="mx-auto pb-4 hidden lg:block">
+                        <img src="{{ asset('banner/large-banner.avif') }}" alt="Uploaded Image"
+                            class="w-full h-60 object-cover">
+                    </div>
                     @if ($posts->isEmpty())
                         <p class="text-gray-600">No images uploaded yet.</p>
                     @else
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             @foreach ($posts as $post)
                                 <div onclick="openModal(' {{ asset($post->image_url) }}')"
                                     class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200">
@@ -114,13 +116,71 @@
                                 </div>
                             @endforeach
                         </div>
+
+
+
+                        <div
+                            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                            <a href="#">
+                                <img class=" rounded-t-lg" src="{{ asset('images/kitchen/kitchen_card8.jpg') }}"
+                                    alt="product image" />
+                            </a>
+                            <div class="px-5 pb-5">
+                                <a href="#">
+                                    <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple
+                                        Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+                                </a>
+                                <div class="flex items-center mt-2.5 mb-5">
+                                    <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                        <svg class="w-4 h-4 text-yellow-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-yellow-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-yellow-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-yellow-300" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                    </div>
+                                    <span
+                                        class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                                    <a href="#"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                                        to cart</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                     @endif
                 </div>
             </div>
         </div>
 
         <!-- Modal -->
-        <div id="imageModal" class="fixed inset-0 hidden bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+        <div id="imageModal"
+            class="fixed inset-0 hidden bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
             <div class="relative max-w-4xl w-full">
                 <button
                     class="absolute -top-10 right-0 text-white text-2xl font-bold hover:text-red-400 transition-colors duration-200"
@@ -128,7 +188,8 @@
                     ✕
                 </button>
                 <div class="rounded-xl overflow-hidden shadow-2xl">
-                    <img id="modalImage" class="w-full h-auto max-h-[80vh] object-contain" src="" alt="">
+                    <img id="modalImage" class="w-full h-auto max-h-[80vh] object-contain" src=""
+                        alt="">
                 </div>
             </div>
         </div>

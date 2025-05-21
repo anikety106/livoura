@@ -1,30 +1,27 @@
 @extends('layouts.app')
 
 @section('title', 'Home')
+
 @section('content')
+    <div class="flex justify-between  px-4 mx-auto max-w-screen-xl">
+        <article
+            class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+            @foreach ($posts as $post)
+                <header class="mb-4 lg:mb-6 not-format">
+                    <x-post-author />
+                </header>
+                <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                    {{ $post->title }}
+                </h1>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <div class="max-w-7xl mx-auto px-4 py-6">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800">Uploaded Images</h2>
+                <p class="lead">{{ $post->description }}</p>
 
-        @if ($posts->isEmpty())
-            <p class="text-gray-600">No images uploaded yet.</p>
-        @else
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach ($posts as $post)
-                    <div
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200">
-                        <img src="{{ $post->image_url }}" alt="Uploaded Image" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <p class="text-gray-700 text-sm">{{ $post->title }}</p>
-                        </div>
-                        <div class="p-4">
-                            <p class="text-gray-700 text-sm">{{ $post->description }}</p>
-                            <p class="text-gray-700 text-sm">{{ date('H:i:s d-m-Y') }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @endif
+                <figure>
+                    @if ($post->image_url)
+                        <img src="{{ $post->image_url }}" alt="{{ $post->title }}">
+                    @endif
+                </figure>
+            @endforeach
+        </article>
     </div>
 @endsection
