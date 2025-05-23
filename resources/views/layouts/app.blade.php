@@ -14,7 +14,7 @@
 <body class="bg-gray-100 text-gray-900">
     <x-header />
 
-    <main class="container mx-auto my-10 min-h-screen">
+    <main class="container mx-auto my-19 min-h-screen">
         @yield('content')
     </main>
 

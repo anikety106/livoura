@@ -18,7 +18,7 @@ class CategoryController extends Controller
 {
     $request->validate([
         'category_type' => 'required|string|max:255',
-        'image_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         'title' => 'required|string|max:255',
         'description' => 'required|string|max:255',
     ]);
@@ -26,7 +26,7 @@ class CategoryController extends Controller
     try {
         // Store the uploaded image in the 'public/uploads/categories' directory
         $path = $request->file('image_url')->store('uploads/categories', 'public');
-        $image_url = asset('storage/' . $path);
+      echo  $image_url = asset('storage/storage/' . $path);
 
         // Create a new category record
         Category::create([

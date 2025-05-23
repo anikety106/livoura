@@ -10,7 +10,5 @@ class Category extends Model
 
 protected $fillable = ['category_type','image_url', 'title', 'description'];
 
-    // protected $casts = [
-    //     'gallery' => 'array',
-    // ];
+  
 }
