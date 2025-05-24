@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 @section('title', 'Category')
 @section('content')
 
@@ -231,5 +231,20 @@
                 }
             });
         </script>
+    </div>
+@endsection --}}
+
+@extends('layouts.app')
+@section('title', 'Category')
+@section('content')
+    <div class="flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-9xl font-extrabold text-gray-800">404</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mt-4">Page Not Found</h2>
+            <p class="text-gray-600 mt-2 mb-6">The page you're looking for doesn't exist or we're currently working on it..</p>
+            <a href="{{ url('/') }}"
+                class="inline-block px-6 py-3 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition duration-300">Return
+                to Homepage</a>
+        </div>
     </div>
 @endsection

@@ -22,9 +22,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/layout', function () {
-    return view('layout');
-})->name('layout');
+//Route::get('/category', function () {
+//    return view('category');
+//})->name('category');
 
 Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 
